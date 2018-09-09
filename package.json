@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --config ./webpack.config.dev.js --mode development",
+    "prepare": "babel src --out-dir lib && webpack --config webpack.config.js",
     "build": "babel src --out-dir lib && webpack --config webpack.config.js"
   },
   "repository": {
