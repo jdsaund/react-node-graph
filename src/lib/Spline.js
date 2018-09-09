@@ -42,7 +42,7 @@ class Spline extends React.Component {
   render() {
     let { selected, position } = this.state;
 
-    let { start, end } = this.props;
+    let { start, end, strokeDasharray } = this.props;
 
     let dist = this.distance([start.x, start.y], [end.x, end.y]);
 
@@ -64,7 +64,7 @@ class Spline extends React.Component {
         <circle cx={start.x} cy={start.y} r="3" fill="#337ab7" />
         <circle cx={end.x} cy={end.y} r="3" fill="#9191A8" />
         <path
-          strokeDasharray="5,5"
+          strokeDasharray={strokeDasharray || "0"}
           className="connector-click-area"
           d={pathString}
           onClick={e => {
@@ -72,7 +72,7 @@ class Spline extends React.Component {
           }}
         />
         <path
-          strokeDasharray="5,5"
+          strokeDasharray={strokeDasharray || "0"}
           className={className}
           d={pathString}
           onClick={e => {

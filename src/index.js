@@ -132,7 +132,7 @@ export default class index extends React.Component {
 
   render() {
     let { data, mousePos, dragging } = this.state;
-    let { grid } = this.props;
+    let { grid, strokeDasharray } = this.props;
 
     let connectors = data.connections;
     let nodes = data.nodes;
@@ -147,7 +147,7 @@ export default class index extends React.Component {
       );
       let connectorEnd = { x: this.state.mousePos.x, y: this.state.mousePos.y };
 
-      newConnector = <Spline start={connectorStart} end={connectorEnd} />;
+      newConnector = <Spline start={connectorStart} end={connectorEnd} strokeDasharray={strokeDasharray} />;
     }
 
     let splineIndex = 0;
@@ -209,6 +209,7 @@ export default class index extends React.Component {
                 onRemove={() => {
                   this.handleRemoveConnector(connector);
                 }}
+                strokeDasharray={strokeDasharray}
               />
             );
           })}
