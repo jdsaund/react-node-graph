@@ -73,7 +73,7 @@ class Node extends React.Component {
           onStop={(event, ui) => this.handleDragStop(event, ui)}
           onDrag={(event, ui) => this.handleDrag(event, ui)}
         >
-          <section style={nodestyle}>
+          <section className={nodeClass} style={nodestyle}>
             <header className="node-header" style={nodeHeaderstyle}>
               <span className="node-title">{this.props.title}</span>
             </header>
