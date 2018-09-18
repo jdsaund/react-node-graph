@@ -179,6 +179,7 @@ export default class index extends React.Component {
                 this.handleNodeDeselect(nid);
               }}
               error={node.error}
+              content={node.content}
             />
           );
         })}

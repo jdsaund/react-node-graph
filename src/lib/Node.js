@@ -54,7 +54,7 @@ class Node extends React.Component {
   }
 
   render() {
-    let { grid, error } = this.props;
+    let { grid, error, content } = this.props;
     let { selected } = this.state;
 
     let nodeClass = "node" + (error ? " error" : "") + (selected ? " selected" : "");
@@ -82,6 +82,7 @@ class Node extends React.Component {
                 items={this.props.inputs}
                 onCompleteConnector={index => this.onCompleteConnector(index)}
               />
+              {content && content(this.props, this.state)}
               <NodeOuputList
                 items={this.props.outputs}
                 onStartConnector={index => this.onStartConnector(index)}
