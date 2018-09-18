@@ -178,6 +178,7 @@ export default class index extends React.Component {
               onNodeDeselect={nid => {
                 this.handleNodeDeselect(nid);
               }}
+              error={node.error}
             />
           );
         })}

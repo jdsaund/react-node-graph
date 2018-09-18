@@ -54,10 +54,10 @@ class Node extends React.Component {
   }
 
   render() {
-    let { grid } = this.props;
+    let { grid, error } = this.props;
     let { selected } = this.state;
 
-    let nodeClass = "node" + (selected ? " selected" : "");
+    let nodeClass = "node" + (error ? " error" : "") + (selected ? " selected" : "");
 
     return (
       <div
