@@ -160,7 +160,7 @@ export default class index extends React.Component {
               key={node.nid}
               index={i}
               nid={node.nid}
-              title={node.type}
+              title={node.title}
               inputs={node.fields.in}
               outputs={node.fields.out}
               grid={grid}
